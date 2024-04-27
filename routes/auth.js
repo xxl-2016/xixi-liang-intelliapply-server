@@ -8,8 +8,6 @@ router.post("/login", async (req, res) => {
   const { username, password } = req.body;
 
   const user = await knex("users").where({ username: username }).first();
-
-  console.log(user);
   if (!user) {
     return res.status(401).json({
       message: "combination of username/password is not found",
@@ -25,7 +23,6 @@ router.post("/login", async (req, res) => {
   const token = jwt.sign(
     {
       id: user.id,
-      role: user.role,
     },
     process.env.SECRET_KEY
   );
