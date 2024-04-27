@@ -4,6 +4,7 @@ const app = express();
 const authRouter = require("./routes/auth");
 const profileRouter = require("./routes/profile");
 const signUpRouter = require("./routes/signup");
+const jobRouter = require("./routes/job");
 
 require("dotenv").config();
 
@@ -15,6 +16,7 @@ const PORT = process.env.PORT || 6060;
 app.use("/auth", authRouter);
 app.use("/profile", profileRouter);
 app.use("/signup", signUpRouter);
+app.use("/jobs", jobRouter);
 
 app.use((req, res) => {
   res.status(404).send("Page not found");

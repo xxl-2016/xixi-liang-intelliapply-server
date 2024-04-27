@@ -4,9 +4,6 @@ const signUp = async (req, res) => {
   try {
     const { username, email, password } = req.body;
 
-    console.log("Username:", username);
-    console.log("Email:", email);
-
     const existingUser = await knex("users")
       .where("username", username)
       .orWhere("email", email)
