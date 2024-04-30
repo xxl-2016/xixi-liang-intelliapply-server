@@ -21,14 +21,4 @@ router.get("/", tokenVerify, async (req, res) => {
   }
 });
 
-router.get("/jobs", tokenVerify, async (req, res) => {
-  try {
-    const jobs = await knex("jobs").where({ username: req.userObj.username });
-    res.status(200).json({ jobs });
-  } catch (error) {
-    console.error("Error fetching jobs:", error);
-    res.status(500).json({ error: "Failed to fetch jobs" });
-  }
-});
-
 module.exports = router;
