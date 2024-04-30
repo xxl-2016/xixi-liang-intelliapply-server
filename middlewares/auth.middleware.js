@@ -8,11 +8,9 @@ const tokenVerify = (req, res, next) => {
     return res.status(401).send("Unauthenticated");
   }
   const token = authorization.split(" ")[1];
-  console.log(token);
 
   try {
     const payload = jwt.verify(token, process.env.SECRET_KEY);
-    console.log(payload);
     req.userObj = payload;
 
     next();
