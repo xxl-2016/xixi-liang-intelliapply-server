@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { getJobList } = require("../controllers/job-controller");
+const { getJobList, getJobDetails } = require("../controllers/job-controller");
 
 router.get("/", async (req, res) => {
   const { keywords } = req.query;
@@ -10,6 +10,17 @@ router.get("/", async (req, res) => {
   } catch (error) {
     console.error("Error fetching job list:", error);
     res.status(500).json({ error: "Failed to fetch job list" });
+  }
+});
+
+router.get("/:jobId", async (req, res) => {
+  const { jobId } = req.params;
+  try {
+    const jobDetails = await getJobDetails(jobId);
+    res.json(jobDetails);
+  } catch (error) {
+    console.error("Error fetching job details:", error);
+    res.status(500).json({ error: "Failed to fetch job details" });
   }
 });
 
