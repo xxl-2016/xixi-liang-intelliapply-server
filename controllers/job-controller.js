@@ -12,7 +12,7 @@ const getJobList = async (keywords) => {
       sort: "mostRelevant",
     },
     headers: {
-      "X-RapidAPI-Key": "f6b53dcb05msh801830548061372p190acejsn3ac3d8f3ec34",
+      "X-RapidAPI-Key": "30777e46bbmshd1fba6423843edbp179fc3jsnb352877301d0",
       "X-RapidAPI-Host": "linkedin-api8.p.rapidapi.com",
     },
   };
@@ -32,7 +32,7 @@ const getJobDetails = async (jobId) => {
     url: "https://linkedin-api8.p.rapidapi.com/get-job-details",
     params: { id: jobId || "3738360408" },
     headers: {
-      "X-RapidAPI-Key": "f6b53dcb05msh801830548061372p190acejsn3ac3d8f3ec34",
+      "X-RapidAPI-Key": "30777e46bbmshd1fba6423843edbp179fc3jsnb352877301d0",
       "X-RapidAPI-Host": "linkedin-api8.p.rapidapi.com",
     },
   };
