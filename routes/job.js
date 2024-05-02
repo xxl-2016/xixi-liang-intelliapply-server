@@ -71,8 +71,16 @@ router.delete("/:jobId", async (req, res) => {
 router.put("/:jobId", async (req, res) => {
   const { jobId } = req.params;
   try {
-    const { applied } = req.body;
-    await knex("jobs").where({ id: jobId }).update({ applied });
+    const { applied, followup } = req.body;
+    const updates = {};
+    if (typeof applied !== "undefined") {
+      updates.applied = applied;
+    }
+    if (typeof followup !== "undefined") {
+      updates.followup = followup;
+    }
+
+    await knex("jobs").where({ id: jobId }).update(updates);
     const updatedJob = await knex("jobs").where({ id: jobId }).first();
     res.json(updatedJob);
   } catch (error) {
