@@ -57,4 +57,28 @@ router.post("/", async (req, res) => {
   }
 });
 
+router.delete("/:jobId", async (req, res) => {
+  const { jobId } = req.params;
+  try {
+    await knex("jobs").where({ id: jobId }).del();
+    res.json({ message: "Job deleted successfully" });
+  } catch (error) {
+    console.error("Error deleting job:", error);
+    res.status(500).json({ error: "Failed to delete job" });
+  }
+});
+
+router.put("/:jobId", async (req, res) => {
+  const { jobId } = req.params;
+  try {
+    const { applied } = req.body;
+    await knex("jobs").where({ id: jobId }).update({ applied });
+    const updatedJob = await knex("jobs").where({ id: jobId }).first();
+    res.json(updatedJob);
+  } catch (error) {
+    console.error("Error updating job applied status:", error);
+    res.status(500).json({ error: "Failed to update job applied status" });
+  }
+});
+
 module.exports = router;
