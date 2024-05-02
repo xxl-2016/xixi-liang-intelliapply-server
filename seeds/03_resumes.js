@@ -2,24 +2,25 @@
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
-
 exports.seed = async function (knex) {
   // Deletes ALL existing entries
-  await knex("resume").del();
-  await knex("resume").insert([
+  await knex("resumes").del();
+  await knex("resumes").insert([
     {
       id: 1,
-      username: "mode123",
-      first_name: "John",
-      last_name: "Doe",
-      email: "",
-      phone: "",
-      location: "",
-      linkedin: "",
-      github: "",
-      portfolio: "",
-      skills: "",
-      experience: [
+      username: "bsmith",
+      first_name: "Betty",
+      last_name: "Smith",
+      address: "123 Main St",
+      email: "bsmith@gmail.com",
+      phone: "778-888-9090",
+      location: "Vancouver BC",
+      linkedin: "https://www.linkedin.com/in/bsmith",
+      github: "https://github.com/bsmith",
+      portfolio: "https://bsmith.dev",
+      skills:
+        "Python, Java, C++, C, SQL, Data Analysis, HTML, CSS, Sass, JavaScript, REST APIs, React JS, Node.js, MySQL",
+      experience: JSON.stringify([
         {
           title: "Software Engineer",
           company: "ABC Inc.",
@@ -32,8 +33,8 @@ exports.seed = async function (knex) {
           start_date: "2018-06-01",
           end_date: "2019-12-31",
         },
-      ],
-      education: [
+      ]),
+      education: JSON.stringify([
         {
           degree: "Bachelor of Science in Computer Science",
           university: "University XYZ",
@@ -44,8 +45,8 @@ exports.seed = async function (knex) {
           university: "University ABC",
           graduation_year: "2018",
         },
-      ],
-      certifications: [
+      ]),
+      certifications: JSON.stringify([
         {
           name: "AWS Certified Solutions Architect - Associate",
           issued_by: "Amazon Web Services",
@@ -56,7 +57,7 @@ exports.seed = async function (knex) {
           issued_by: "Microsoft",
           year: "2020",
         },
-      ],
+      ]),
     },
   ]);
 };

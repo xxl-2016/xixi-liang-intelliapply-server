@@ -12,6 +12,7 @@ exports.up = function (knex) {
       .onDelete("CASCADE");
     table.string("first_name").notNullable();
     table.string("last_name").notNullable();
+    table.string("address").notNullable();
     table.string("email").notNullable();
     table.string("phone").notNullable();
     table.string("location").notNullable();

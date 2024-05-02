@@ -6,6 +6,7 @@ const profileRouter = require("./routes/profile");
 const signUpRouter = require("./routes/signup");
 const jobRouter = require("./routes/job");
 const savedJobsRouter = require("./routes/saved");
+const generateResume = require("./routes/resume");
 
 require("dotenv").config();
 
@@ -19,6 +20,7 @@ app.use("/profile", profileRouter);
 app.use("/signup", signUpRouter);
 app.use("/jobs", jobRouter);
 app.use("/saved", savedJobsRouter);
+app.use("/resume", generateResume);
 
 app.use((req, res) => {
   res.status(404).send("Page not found");
