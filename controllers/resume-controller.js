@@ -1,5 +1,6 @@
 const axios = require("axios");
 const knex = require("knex")(require("../knexfile"));
+const resumeTemplate = require("../data/resume-template/resume-template.json");
 
 const generateResume = async (username) => {
   try {
@@ -7,17 +8,17 @@ const generateResume = async (username) => {
     if (!resumeData) {
       console.error(`Resume not found for username ${username}`);
     }
-    const resumeText = `Write a resume\n\nID: ${resumeData.id}\nUsername: ${
-      resumeData.username
-    }\nFirst Name: ${resumeData.first_name}\nLast Name: ${
-      resumeData.last_name
-    }\nEmail: ${resumeData.email}\nPhone: ${resumeData.phone}\nLocation: ${
-      resumeData.location
-    }\nLinkedIn: ${resumeData.linkedin}\nGitHub: ${
-      resumeData.github
-    }\nPortfolio: ${resumeData.portfolio}\nSkills: ${
-      resumeData.skills
-    }\nExperience:\n${resumeData.experience
+    const resumeText = `Write a resume by using ${resumeTemplate} as reference\n\nID: ${
+      resumeData.id
+    }\nUsername: ${resumeData.username}\nFirst Name: ${
+      resumeData.first_name
+    }\nLast Name: ${resumeData.last_name}\nEmail: ${resumeData.email}\nPhone: ${
+      resumeData.phone
+    }\nLocation: ${resumeData.location}\nLinkedIn: ${
+      resumeData.linkedin
+    }\nGitHub: ${resumeData.github}\nPortfolio: ${
+      resumeData.portfolio
+    }\nSkills: ${resumeData.skills}\nExperience:\n${resumeData.experience
       .map(
         (exp) =>
           `- Title: ${exp.title}\n  Company: ${exp.company}\n  Start Date: ${exp.start_date}\n  End Date: ${exp.end_date}`

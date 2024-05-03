@@ -1,5 +1,6 @@
 const axios = require("axios");
 const knex = require("knex")(require("../knexfile"));
+const coverLetterTemplate = require("../data/cover-letter-template/cover-letter-template.json");
 
 const generateCoverLetter = async (username) => {
   try {
@@ -7,7 +8,7 @@ const generateCoverLetter = async (username) => {
     if (!resumeData) {
       console.error(`Resume not found for username ${username}`);
     }
-    const resumeText = `Write a cover letter\n\nID: ${
+    const resumeText = `Write a cover letter by using ${coverLetterTemplate} as reference\n\nID: ${
       resumeData.id
     }\nUsername: ${resumeData.username}\nFirst Name: ${
       resumeData.first_name

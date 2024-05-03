@@ -1,0 +1,68 @@
+{
+    "id": 1,
+    "name": "John Smith",
+    "title": "Data Scientist",
+    "phone": "555-555-5555",
+    "email": "joansmith@gmail.com",
+    "linkedin": "linkedin.com/joansmith",
+    "github": "github.com/joansmith",
+    "profile": "Profile section: 3-4 sentences. Refer to the Telling Your Story and Resume workshops.",
+    "skills": {
+      "technical": ["Python", "R", "SQL", "Data Analysis", "Data Visualization", "Tableau", "Sketch", "Figma", "Design Thinking", "Wireframes", "User Research", "UX Strategy", "Personas", "Prototyping", "User Testing", "UI Design", "HTML", "CSS", "Sass", "JavaScript", "REST APIs", "React JS", "Node.js", "MySQL"]
+    },
+    "projects": [
+      {
+        "role": "Your Role (Lead Coder, Data Scientist, UX Designer, etc.)",
+        "title": "Title of Project",
+        "date": "MAR 2023, BRAINSTATION CAPSTONE",
+        "accomplishments": [
+          "Write an accomplishment statement to highlight your achievements, contributions, and skills used."
+        ]
+      },
+      {
+        "role": "Your Role (Lead Coder, Data Scientist, UX Designer, etc.)",
+        "title": "Title of Project",
+        "date": "MAR 2023, BRAINSTATION HACKATHON",
+        "accomplishments": [
+          "Write an accomplishment statement to highlight your achievements, contributions, and skills used."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "institution": "BrainStation",
+        "degree": "Diploma, Data Science",
+        "date": "JAN 2023 - APR 2023",
+        "location": "NEW YORK, NY"
+      },
+      {
+        "institution": "New York University",
+        "degree": "Bachelors in Economics, Minor Finance",
+        "date": "JAN 2014 - APR 2018",
+        "location": "NEW YORK, NY"
+      }
+    ],
+    "experience": [
+      {
+        "title": "Senior Consultant",
+        "company": "Chase",
+        "date": "JAN 2019 - APR 2022",
+        "location": "NEW YORK, NY",
+        "responsibilities": [
+          "Liaised between guests and partners to resolve medium to high complexity issues.",
+          "Demonstrated punctuality and organization by collecting and unifying data from various stakeholders to subsidize legal budget instruments."
+        ]
+      },
+      {
+        "title": "General Manager",
+        "company": "HSBC",
+        "date": "JAN 2017 - DEC 2019",
+        "location": "NEW YORK, NY",
+        "responsibilities": [
+          "Accountable for direct client support, with a track of building sustainable relationships.",
+          "Summarized research and analysis in an easy-to-understand and engaging manner, providing insights and recommendations."
+        ]
+      }
+    ]
+  }
+  
