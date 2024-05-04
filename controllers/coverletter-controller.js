@@ -10,11 +10,11 @@ const generateCoverLetter = async (username) => {
     }
     const resumeText = `Write a cover letter by using ${coverLetterTemplate} as reference\n\nID: ${
       resumeData.id
-    }\nUsername: ${resumeData.username}\nFirst Name: ${
-      resumeData.first_name
-    }\nLast Name: ${resumeData.last_name}\nEmail: ${resumeData.email}\nPhone: ${
+    }\nUsername: ${resumeData.username}\nMy name is: ${
+      resumeData.first_name + " " + resumeData.last_name
+    }\nMy Email is: ${resumeData.email}\nMy Phone Number is : ${
       resumeData.phone
-    }\nLocation: ${resumeData.location}\nLinkedIn: ${
+    }\nMy Address is: ${resumeData.location}\nLinkedIn: ${
       resumeData.linkedin
     }\nGitHub: ${resumeData.github}\nPortfolio: ${
       resumeData.portfolio
