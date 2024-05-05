@@ -5,9 +5,9 @@ const {
 } = require("../controllers/coverletter-controller");
 
 router.get("/", async (req, res) => {
-  const { username } = req.query;
+  const { username, jobId } = req.query;
   try {
-    const coverLetter = await generateCoverLetter(username);
+    const coverLetter = await generateCoverLetter(username, jobId);
     if (!coverLetter) {
       return res.status(404).json({ error: "Cover letter not found" });
     }

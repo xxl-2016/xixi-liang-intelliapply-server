@@ -2,15 +2,26 @@ const axios = require("axios");
 const knex = require("knex")(require("../knexfile"));
 const coverLetterTemplate = require("../data/cover-letter-template/cover-letter-template.json");
 
-const generateCoverLetter = async (username) => {
+const generateCoverLetter = async (username, jobId) => {
   try {
     const resumeData = await knex("resumes").where({ username }).first();
     if (!resumeData) {
       console.error(`Resume not found for username ${username}`);
     }
-    const resumeText = `Write a cover letter by using ${coverLetterTemplate} as reference\n\nID: ${
-      resumeData.id
-    }\nUsername: ${resumeData.username}\nMy name is: ${
+    let jobData;
+    if (jobId) {
+      jobData = await knex("jobs").where({ id: jobId }).first();
+      if (!jobData) {
+        console.error(`Job not found for jobId ${jobId}`);
+      }
+    }
+    const currentDate = new Date().toLocaleDateString();
+    const resumeText = `Write a cover letter by using ${currentDate} and ${coverLetterTemplate} as reference\n
+    replace the following placeholders with the actual data\n
+    the company I will apply is ${jobData.company_name} and the job title is ${
+      jobData.job_title
+    }/n as advertised on LinkedIn\ncompany location is ${jobData.location}\n
+    ID: ${resumeData.id}\nUsername: ${resumeData.username}\nMy name is: ${
       resumeData.first_name + " " + resumeData.last_name
     }\nMy Email is: ${resumeData.email}\nMy Phone Number is : ${
       resumeData.phone
