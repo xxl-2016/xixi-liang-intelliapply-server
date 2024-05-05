@@ -3,7 +3,7 @@ const axios = require("axios");
 const getJobList = async (keywords) => {
   const options = {
     method: "GET",
-    url: "https://linkedin-api8.p.rapidapi.com/search-jobs",
+    url: "https://linkedin-api8.p.rapidapi.com/search-jobs-v2",
     params: {
       keywords: keywords || "developer",
       locationId:
