@@ -1,6 +1,5 @@
 const axios = require("axios");
 const knex = require("knex")(require("../knexfile"));
-const coverLetterTemplate = require("../data/cover-letter-template/cover-letter-template.json");
 
 const generateCoverLetter = async (username, jobId) => {
   try {
@@ -16,7 +15,7 @@ const generateCoverLetter = async (username, jobId) => {
       }
     }
     const currentDate = new Date().toLocaleDateString();
-    const resumeText = `Write a cover letter by using ${currentDate} and ${coverLetterTemplate} as reference\n
+    const resumeText = `Write a cover letter by using ${currentDate}\n
     replace the following placeholders with the actual data\n
     the company I will apply is ${jobData.company_name} and the job title is ${
       jobData.job_title
