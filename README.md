@@ -7,6 +7,7 @@ IntelliApply Pro Server is the backend component of the IntelliApply Pro web app
 ## Installation
 
 - Clone the repository: git clone https://github.com/xxl-2016/xixi-liang-intelliapply-server
+- create .env
 - npm i
 - npm run migrate
 - npm run seed
